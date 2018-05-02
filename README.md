@@ -1,6 +1,6 @@
 # $how Me The Money
 
-# Kahu 2018 Cohort Group Project
+# Kokako 2018 Large Group Project
 
 Meetings are expensive, but sometimes we forget how expensive they are and feel the need to talk for too long about topics that are unimportant for the meeting purpose.
 
