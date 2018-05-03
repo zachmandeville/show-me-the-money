@@ -1,3 +1,33 @@
 /* Notes for Anthony:
 I removed the id as Bulma has a class to expanded input fields (is-expanded)
 which expands the input fields across the space being used. */
+
+.title.is-1 {
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar-item {
+    font-family: 'Lato', sans-serif;
+}
+
+.box {
+    width: 50%;
+    margin: auto;
+}
+
+.checkbox {
+    margin: auto;
+}
+
+.weebox {
+    margin-right: 5px;
+}
+
+#start {
+    margin-right: 10px;
+}
+
+#or {
+    margin-left: 10px;
+    margin-right: 10px;
+}
