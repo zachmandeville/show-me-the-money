@@ -1,5 +1,11 @@
 var hash = require('../auth/hash')
 
+
+var environment = process.env.NODE_ENV || 'development'
+var config = require('../../knexfile')[environment]
+var db = require('knex')(config)
+
+
 function createUser (user_name, first_name, last_name, password, db) {
   return new Promise ((resolve, reject) => {
     hash.generate(password, (err, hash) => {

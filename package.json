@@ -5,9 +5,9 @@
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
   "scripts": {
-    "postinstall": "webpack",
+    "postinstall": "webpack && knex migrate:latest",
     "dev": "nodemon --watch server server/index & webpack --watch",
-    "start": "node server/index",
+    "start": "node server",
     "test": "ava  -v  --serial 'test/**/*.test.js'",
     "watch": "nodemon -e js,jsx -x npm test",
     "h:deploy": "git push heroku master",
