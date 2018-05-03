@@ -56,14 +56,15 @@ As a user:
 
 ## API (Client - Server)
 
-| Method | Endpoint | Protected | Usage | Response |
-| --- | --- | --- | --- | --- |
-| Post | /api/auth/login | Yes | Log In a User | The Users JWT Token |
-| Post | /api/auth/register | Yes | Register a User | The Users JWT Token |
-| Get | /api/meetings | Yes | Get a Users Meeting Histroy | An Array of Meetings |
-| Post | /api/meetings | Yes | Save a completed meeting | The Meeting that has been saved in db read format |
-| Get | /api/meetings/:id/users | Yes | Get the attendees of a Meeting | An Array of User objects |
-| Get | /api/users | Yes | Get the users of the app | An Array of User Objects |
+| Method | Endpoint                | Protected | Usage                          | Response                                            |
+| ---    | ---                     | ---       | ---                            | ---                                                 |
+| Post   | /api/auth/login         | Yes       | Log In a User                  | The Users JWT Token                                 |
+| Post   | /api/auth/register      | Yes       | Register a User                | The Users JWT Token                                 |
+| Get    | /api/meetings           | Yes       | Get a Users Meeting Histroy    | An Array of Meetings                                |
+| Post   | /api/meetings           | Yes       | Schedule a new meeting         | The Meeting that has been added in db read format   |
+| Put    | /api/meetings/:id       | Yes       | Save a completed meeting       | The Meeting that has been updated in db read format |
+| Get    | /api/meetings/:id/users | Yes       | Get the attendees of a Meeting | An Array of User objects                            |
+| Get    | /api/users              | Yes       | Get the users of the app       | An Array of User Objects                            |
 
 ## Response Formats
 
@@ -133,6 +134,26 @@ res STATUS 500
 ```
 
 POST `/api/meetings/`
+
+```
+res STATUS 200
+  {
+    "name": "Followup on API",
+    "date": 06052018,
+    "start_time": 800,
+    "end_time": 900,
+    "attendees": [
+      {user_name: "bob", first_name: "Bob", last_name: "Smith", hourly_wage: 10},
+      {user_name: "alice", first_name: "Alice", last_name: "Smith", hourly_wage: 10},
+      {user_name: "eve", first_name: "Eve", last_name: "Miller", hourly_wage: 10}
+    ]
+  }
+res STATUS 500
+  {
+  "message": "error occured.  Whoops!"
+  }
+```
+PUT '/api/meetings/2'
 
 ```
 res STATUS 200
