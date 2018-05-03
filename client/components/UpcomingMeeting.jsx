@@ -1,6 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
+
+import MeetingDetails from './MeetingDetails'
+
 import {Link} from 'react-router-dom'
+
 
 function UpcomingMeeting (props) {
   return <div className="container">
@@ -25,10 +29,11 @@ function UpcomingMeeting (props) {
           </tr>
         </tbody>
       </table>
-      
+      <button className="button is-dark is-large">Add new meeting</button>
+      <button className="button is-primary is-large">View past meetings</button>
+      <MeetingDetails /> 
         <Link className="button is-centered is-dark is-large" to = '/meeting'>Add New Meeting</Link>
         <Link className="button is-centered is-primary is-large" to = '/history'>View past meetings</Link>
-      
     </div>
   </div>
 }
