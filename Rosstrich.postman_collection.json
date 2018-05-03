@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "0b1aaef3-2968-4a70-ad05-7f7c619ab3cf",
+		"name": "Rosstrich",
+		"description": "A set of get and post requests to test the API for Rosstrich, our '$how me the Money' app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Log in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Post request for logging in a user"
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				},
+				"description": "Register a user and expect a JWT back"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Meetings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/meetings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"meetings"
+					]
+				},
+				"description": "Get A users meeting history, and list of possible future meetings.\n\nExpects an array of meetings back. "
+			},
+			"response": []
+		},
+		{
+			"name": "Get Meeting Attendees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/meetings/:id/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"meetings",
+						":id",
+						"users"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Get the attendees of a particular meeting.  The id in this case is the meeting's id.\n\nExpects an array of users (with each user an object)"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "Get all users of the app.  Expects an array of users (with each one an object).\n\nFor our MVP, there would only be a single user returned.  For our stretch, there'll be multiple (implying that when you use the mvp, you make so much money that you can hire more people.)"
+			},
+			"response": []
+		},
+		{
+			"name": "Schedule new Meeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Followup on API\",\n    \"date\": 06052018,\n    \"attendees\": [{\"user_name\":\"bob\",\"first_name\":\"Bob\",\"last_name\":\"Smith\",\"hourly_wage\":10},{\"user_name\":\"alice\",\"first_name\":\"Alice\",\"last_name\":\"Smith\",\"hourly_wage\":10},{\"user_name\":\"eve\",\"first_name\":\"Eve\",\"last_name\":\"Miller\",\"hourly_wage\":10}]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/meetings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"meetings"
+					]
+				},
+				"description": "Save a completed meeting to the database.  Expects a meeting in a readable db format (an object essentially).\n\nThis scenario is when you schedule a meeting the first time.  This is not used when you've _finished_ a meeting."
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Meeting",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Followup on API\",\n    \"date\": 06052018,\n    \"start_time\": \"2018-05-05 09:01:00\",\n    \"end_time\": \"2018-05-05 09:55:25\",\n    \"attendees\": [{\"user_name\":\"bob\",\"first_name\":\"Bob\",\"last_name\":\"Smith\",\"hourly_wage\":10},{\"user_name\":\"alice\",\"first_name\":\"Alice\",\"last_name\":\"Smith\",\"hourly_wage\":10},{\"user_name\":\"eve\",\"first_name\":\"Eve\",\"last_name\":\"Miller\",\"hourly_wage\":10}]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/meetings/2/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"meetings",
+						"2",
+						""
+					]
+				},
+				"description": "Update a meeting in the meetings db with the finalized start and finish time.  Expects an object back with the updated meeting. "
+			},
+			"response": []
+		}
+	]
+}
