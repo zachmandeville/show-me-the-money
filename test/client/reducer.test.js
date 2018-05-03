@@ -1,10 +1,10 @@
-const meetings = require('../../client/reducers/meetingsReducer')
+import meetings from '../../client/reducers/meetingsReducer'
 
 test('Reducer initial state', () => {
     const expected = []
     const action = {}
   
-    const actual = catReducer(undefined, action)
+    const actual = meetings(undefined, action)
   
     expect(actual).toEqual(expected)
   })
