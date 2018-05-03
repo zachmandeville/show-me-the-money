@@ -1,4 +1,4 @@
-import request from './utils/api'
+import request from '../utils/api'
 
 export function getMeetingHistory() {
     return (dispatch) => {
@@ -80,7 +80,7 @@ export function saveCompletedMeeting() {
 //     }
 // }
 
-export function saveCompletedMeeting(meeting) {
+export function sendCompletedMeeting(meeting) {
     return {
         type: 'SAVE_COMPLETED',
         meeting

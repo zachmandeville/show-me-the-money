@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import MeetingDetails from './MeetingDetails'
+
 
 function UpcomingMeeting (props) {
   return <div className="container">
@@ -29,7 +29,6 @@ function UpcomingMeeting (props) {
       </table>      
         <Link className="button is-centered is-dark is-large" to = '/meeting'>Add New Meeting</Link>
         <Link className="button is-centered is-primary is-large" to = '/history'>View past meetings</Link>
-        <MeetingDetails /> 
     </div>
   </div>
 }
