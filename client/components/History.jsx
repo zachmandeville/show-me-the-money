@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import MeetingDetails from './MeetingDetails'
+import {Link} from 'react-router-dom'
 
 function History (props) {
   return <div className="container">
@@ -12,10 +14,6 @@ function History (props) {
             <th className="th">Cost</th>
             <th className="th">Length</th>
             <th className="th">Actions</th>
-<<<<<<< HEAD
-
-=======
->>>>>>> c3a622cd494b0f54d19b1885ecd2dc52193e8bd2
           </tr>
         </thead>
         <tbody>
@@ -23,7 +21,8 @@ function History (props) {
             <th className="th">3-05-2018</th>
             <td className="td">$38.90</td>
             <td className="td">7 minutes</td>
-            <td className="td"><a class="button">Inspect details</a>, <a class="button">edit details</a> or <a class="button">delete meeting</a></td>
+            <td className="td">
+            <Link to = '/meetingdetails'><a class="button">Inspect details</a></Link>, <a class="button">edit details</a> or <a class="button">delete meeting</a></td>
           </tr>
         </tbody>
       </table>

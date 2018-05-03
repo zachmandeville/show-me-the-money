@@ -4,6 +4,11 @@ import {connect} from 'react-redux'
 
 function Counter (props) {
     return <div className="container">
+    <div>
+      <br/>
+    <h2 className="title is-2">Meeting Details</h2>
+    </div>
+    <br/>
      <table className="table is-fullwidth">
      <tbody>
           <tr>
@@ -32,6 +37,7 @@ function Counter (props) {
           </tr>
         </tbody>
       </table>
+      <Link className="button is-centered is-primary is-large" to = '/history'>Back</Link>
     </div>
   }
   
