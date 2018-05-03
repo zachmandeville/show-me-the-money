@@ -65,6 +65,136 @@ As a user:
 | Get | /api/meetings/:id/users | Yes | Get the attendees of a Meeting | An Array of User objects |
 | Get | /api/users | Yes | Get the users of the app | An Array of User Objects |
 
+## Response Formats
+
+POST `/api/auth/login`
+
+```
+res STATUS 200
+{
+  "message": "login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9.gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpy"
+}
+
+res STATUS 400
+{
+  "message": "No user found. Please try again?"
+}
+
+res STATUS 500
+{
+  "message": "Ah no.  We been notified."
+}
+```
+
+POST `/api/auth/register`
+
+```
+res STATUS 200
+{
+  "message": "registration successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9.gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpy"
+}
+
+res STATUS 400
+{
+  "message": "Ah, an error occured.  Did you put in valid information?"
+}
+
+res STATUS 500
+  {
+  "message": "error occured.  Whoops!"
+  }
+```
+
+GET `/api/meetings`
+
+```
+res STATUS 200
+[
+  {
+    "id": 1,
+    "name": "Introduction to API",
+    "date": 04052018,
+    "start_time": 800,
+    "end_time": 900,
+    "attendees": [
+      {id: 1, name: "bob", wage_per_hour: 10, salary: 20000},
+      {id: 2, name: "alice", wage_per_hour: 10, salary: 20000},
+      {id: 3, name: "eve", wage_per_hour: 10, salary: 20000}
+      {id: 4, name: "chris", wage_per_hour: 10, salary: 20000}
+      ]
+  }
+]    
+res STATUS 500
+  {
+  "message": "error occured.  Whoops!"
+  }
+```
+
+POST `/api/meetings/`
+
+```
+res STATUS 200
+  {
+    "name": "Followup on API",
+    "date": 06052018,
+    "start_time": 800,
+    "end_time": 900,
+    "attendees": [
+      {name: "bob", wage_per_hour: 10, salary: 20000},
+      {name: "alice", wage_per_hour: 10, salary: 20000},
+      {name: "eve", wage_per_hour: 10, salary: 20000}
+      ]
+  }
+res STATUS 500
+  {
+  "message": "error occured.  Whoops!"
+  }
+```
+
+GET `/api/meetings/2/users`
+```
+res STATUS 200
+[
+  {id: 1, name: "bob", wage_per_hour: 10, salary: 20000},
+  {id: 2, name: "alice", wage_per_hour: 10, salary: 20000},
+  {id: 3, name: "eve", wage_per_hour: 10, salary: 20000}
+]
+res STATUS 400
+{
+  "message": "Sorry, an error occured.  Did you put in a valid ID?"
+}
+
+res STATUS 500
+  {
+  "message": "error occured.  Whoops!"
+  }
+```
+
+GET `/api/users`
+
+```
+res STATUS 200
+[
+  {id: 1, name: "bob", wage_per_hour: 10, salary: 20000},
+  {id: 2, name: "alice", wage_per_hour: 10, salary: 20000},
+  {id: 3, name: "eve", wage_per_hour: 10, salary: 20000}
+  {id: 4, name: "chris", wage_per_hour: 10, salary: 20000}
+]
+
+res STATUS 500
+{ 
+  "message": "Whoops!  An Error Occured!"
+}
+```
+
+
+
+    
+
+
+
 ## DB (Server Side)
   There should be three tables for MVP
 
