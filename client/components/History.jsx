@@ -24,7 +24,7 @@ function History (props) {
             <td className="td">$38.90</td>
             <td className="td">7 minutes</td>
             <td className="td">
-            <Link to = '/meetingdetails'><a class="button">Inspect details</a></Link>, <a class="button">edit details</a> or <a class="button">delete meeting</a></td>
+            <Link to = '/meetingdetails'><a class="button">Inspect details</a></Link> or <a class="button">delete meeting</a></td>
           </tr>
         </tbody>
       </table>
