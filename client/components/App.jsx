@@ -7,6 +7,9 @@ import Register from './Register'
 import Nav from './Nav'
 import Meeting from './Meeting'
 import History from './History'
+import UpcomingMeeting from './UpcomingMeeting'
+import MeetingDetails from './MeetingDetails'
+import EditMeeting from './EditMeeting';
 
 const App = ({auth}) => (
   <Router>
@@ -15,7 +18,7 @@ const App = ({auth}) => (
       <div className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to='/' className="">
-            <h1 className="title is-1">$how Me The Money</h1>
+            <h1 className="title is-1">Show Me The Money</h1>
           </Link>
           <Nav />
         </div>
@@ -29,6 +32,9 @@ const App = ({auth}) => (
         <Route path="/register" component={Register} />
         <Route path="/meeting" component={Meeting} />
         <Route path="/history" component={History} />
+        <Route path="/upcomingmeeting" component={UpcomingMeeting} />
+        <Route path="/meetingdetails" component={MeetingDetails} />
+        <Route path="/editmeeting" component={EditMeeting} />
       </div>
 
     </div>
