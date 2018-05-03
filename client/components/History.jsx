@@ -10,8 +10,9 @@ function History (props) {
           <tr className="tr">
             <th className="th">Date</th>
             <th className="th">Cost</th>
-            <th className="th"><abbr title="Length">Length</abbr></th>
-            <th className="th"><abbr title="Length">Actions</abbr></th>
+            <th className="th">Length</th>
+            <th className="th">Actions</th>
+
           </tr>
         </thead>
         <tbody>
