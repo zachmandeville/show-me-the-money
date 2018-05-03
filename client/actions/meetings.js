@@ -44,11 +44,25 @@ export function getMeetingAttendees() {
 
 export function getUsers() {
     return (dispatch) => {
-        // dispatch(requestUsers())
         return request
         .get('/api/users')
         .then (res => {
             dispatch(receiveUsers(res.body))
+        })
+        .catch(err => {
+            dispatch(showError(err.message))
+        })
+    }
+
+}
+
+
+export function saveCompletedMeeting() {
+    return (dispatch) => {
+        return request
+        .put('/api/meetings/:id')
+        .then (res => {
+            dispatch(sendCompletedMeeting(res.body))
         })
         .catch(err => {
             dispatch(showError(err.message))
@@ -65,6 +79,13 @@ export function getUsers() {
 //         type: 'REQUEST_HISTORY'
 //     }
 // }
+
+export function saveCompletedMeeting(meeting) {
+    return {
+        type: 'SAVE_COMPLETED',
+        meeting
+    }
+}
 
 export function receiveMeetingHistory(meetings){
     return {
