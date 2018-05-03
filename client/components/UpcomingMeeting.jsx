@@ -22,7 +22,8 @@ function UpcomingMeeting (props) {
             <th className="th">19-05-2018</th>
             <td className="td">10.00</td>
             <td className="td">Discussing finances</td>
-            <td className="td"><a class="button">Change details</a> or <a class="button">begin meeting</a></td>
+            <td className="td">
+            <Link to = "/editmeeting"><a class="button">Edit details</a></Link> or <a class="button">Begin meeting</a></td>
           </tr>
         </tbody>
       </table>      
