@@ -9,7 +9,7 @@ import {SHOW_ERROR} from '../actions/meetings'
 function meetings (state = [], action){
     switch (action.type) {
         case RECEIVE_HISTORY: 
-            return action.meetings
+            return [...state, action.meetings]
         case SAVE_MEETING:
             return [...state, action.meeting]    
         case RECEIVE_ATTENDEES:
