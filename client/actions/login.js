@@ -41,3 +41,23 @@ export function loginUser (creds) {
       })
   }
 }
+
+// export function receivedUserLogIn(status) {
+//   return {
+//       message: "login successful",
+
+//   }
+// }
+
+// export function logInUser () {
+//   return (dispatch) => 
+//       request 
+//           .post('api/auth/login')
+//           .then (res => {
+//               let status = res.status
+//               dispatch(receivedUserLogIn(status))
+//           })
+//           .catch(err => {
+//               dispatch(showError(err.message))
+//             })
+// }
