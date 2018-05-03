@@ -55,15 +55,15 @@ test('test get users by meeting from DB', () => {
         end_time : 1200,
         attendees: 'TBA'}
     //Expected result adds new user id 994 for seed database
-    //var expected = [994]
-    console.log(newTestMeeting)
-
-    return db.newMeeting (...newTestMeeting, testDb)
+    var expected = [3]
+    
+    db.addNewMeeting (newTestMeeting, testDb)
       .then(res => {
         console.log(res) 
-        //expect(res).toEqual(expected)    
+        
+        expect(res).toEqual(expected)    
       })
-      //.catch(err => {expect(err).toBeNull()})
+      .catch(err => {expect(err).toBeNull()})
          
   })
 

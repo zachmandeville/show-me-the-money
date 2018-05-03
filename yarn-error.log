@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn test db.test
+  /usr/local/bin/node /usr/local/bin/yarn test
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -7544,7 +7544,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest db.test
+  Arguments: -c jest
   Directory: /Users/stevetorrens/workspace/grpproj/show-me-the-money
   Output:
   

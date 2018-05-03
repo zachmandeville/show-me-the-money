@@ -10,8 +10,9 @@ function getMeetings (db) {
 
 //POST /api/meetings/
 function addNewMeeting (newMeeting, db) {
-  return db('meetings')   
-    .insert(...newMeeting)
+    console.log(newMeeting)
+    return db('meetings')   
+      .insert(newMeeting)
 }
    
 //GET /api/meetings/2/users
