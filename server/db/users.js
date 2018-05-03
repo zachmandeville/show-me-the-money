@@ -29,6 +29,12 @@ function getUserByName (user_name, db) {
     .first()
 }
 
+//Get users for GET /api/users
+function getUsers (db) {
+  return db('users')
+    .select('user_name', 'first_name', 'last_name', 'hourly_wage')
+}
+
 module.exports = {
   createUser,
   userExists,

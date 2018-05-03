@@ -13,11 +13,15 @@
 				"header": [],
 				"body": {},
 				"url": {
+<<<<<<< HEAD
 					"raw": "localhost:3000/api/auth/login",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
+=======
+					"raw": "/api/auth/login",
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					"path": [
 						"api",
 						"auth",
@@ -35,7 +39,15 @@
 				"header": [],
 				"body": {},
 				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:3000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+=======
 					"raw": "/api/auth/register",
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					"path": [
 						"api",
 						"auth",
@@ -53,7 +65,15 @@
 				"header": [],
 				"body": {},
 				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:3000/api/meetings",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+=======
 					"raw": "/api/meetings",
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					"path": [
 						"api",
 						"meetings"
@@ -70,7 +90,15 @@
 				"header": [],
 				"body": {},
 				"url": {
+<<<<<<< HEAD
+					"raw": "localhost:3000/api/meetings/:id/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+=======
 					"raw": "/api/meetings/:id/users",
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					"path": [
 						"api",
 						"meetings",
@@ -95,11 +123,15 @@
 				"header": [],
 				"body": {},
 				"url": {
+<<<<<<< HEAD
 					"raw": "localhost:3000/api/users",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
+=======
+					"raw": "/api/users",
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					"path": [
 						"api",
 						"users"
@@ -113,6 +145,7 @@
 			"name": "Schedule new Meeting",
 			"request": {
 				"method": "POST",
+<<<<<<< HEAD
 				"header": [
 					{
 						"key": "Content-Type",
@@ -129,6 +162,12 @@
 						"localhost"
 					],
 					"port": "3000",
+=======
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "/api/meetings",
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					"path": [
 						"api",
 						"meetings"
@@ -142,6 +181,7 @@
 			"name": "Complete Meeting",
 			"request": {
 				"method": "PUT",
+<<<<<<< HEAD
 				"header": [
 					{
 						"key": "Content-Type",
@@ -163,6 +203,23 @@
 						"meetings",
 						"2",
 						""
+=======
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "/api/meetings/:id/",
+					"path": [
+						"api",
+						"meetings",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+>>>>>>> f2568acaca718367c6a6ef15f97b0cbf56c3565f
 					]
 				},
 				"description": "Update a meeting in the meetings db with the finalized start and finish time.  Expects an object back with the updated meeting. "
