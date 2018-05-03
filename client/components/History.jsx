@@ -11,6 +11,7 @@ function History (props) {
             <th className="th">Date</th>
             <th className="th">Cost</th>
             <th className="th">Length</th>
+            <th className="th">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@ function History (props) {
             <th className="th">3-05-2018</th>
             <td className="td">$38.90</td>
             <td className="td">7 minutes</td>
+            <td className="td"><a class="button">Inspect details</a>, <a class="button">edit details</a> or <a class="button">delete meeting</a></td>
           </tr>
         </tbody>
       </table>
