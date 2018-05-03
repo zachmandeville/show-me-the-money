@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 function UpcomingMeeting (props) {
   return <div className="container">
@@ -9,9 +10,9 @@ function UpcomingMeeting (props) {
       <table className="table is-bordered is-fullwidth">
         <thead className="thead">
           <tr className="tr">
-            <th className="th"><abbr title="Date">Date</abbr></th>
+            <th className="th">Date</th>
             <th className="th">Starting time</th>
-            <th className="th"><abbr title="Length">Description</abbr></th>
+            <th className="th">Description</th>
             <th className="th">Actions</th>
           </tr>
         </thead>
@@ -24,8 +25,10 @@ function UpcomingMeeting (props) {
           </tr>
         </tbody>
       </table>
-      <button className="button is-dark is-large">Add new meeting</button>
-      <button className="button is-primary is-large">View past meetings</button>
+      
+        <Link className="button is-centered is-dark is-large" to = '/meeting'>Add New Meeting</Link>
+        <Link className="button is-centered is-primary is-large" to = '/history'>View past meetings</Link>
+      
     </div>
   </div>
 }
