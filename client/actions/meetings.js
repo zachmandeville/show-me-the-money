@@ -1,11 +1,8 @@
 import request from './utils/api'
 
-
-
-
 export function getMeetingHistory() {
     return (dispatch) => {
-        dispatch(requestMeetingHistory())
+        // dispatch(requestMeetingHistory())
         return request
         .get('/api/meetings')
         .then (res => {
@@ -32,7 +29,7 @@ export function saveMeeting () {
 
 export function getMeetingAttendees() {
     return (dispatch) => {
-        dispatch(requestMeetingAttendees())
+        // dispatch(requestMeetingAttendees())
         return request
         .get('/api/meetings/:id/users')
         .then (res => {
@@ -47,7 +44,7 @@ export function getMeetingAttendees() {
 
 export function getUsers() {
     return (dispatch) => {
-        dispatch(requestUsers())
+        // dispatch(requestUsers())
         return request
         .get('/api/users')
         .then (res => {
@@ -63,13 +60,13 @@ export function getUsers() {
 
 //actions: 
 
-export function requestMeetingHistory(){
-    return {
-        type: 'REQUEST_HISTORY'
-    }
-}
+// export function requestMeetingHistory(){
+//     return {
+//         type: 'REQUEST_HISTORY'
+//     }
+// }
 
-export function receiveMeetingHistory(){
+export function receiveMeetingHistory(meetings){
     return {
         type: 'RECEIVE_HISTORY',
         meetings
@@ -84,11 +81,11 @@ export function savedMeeting(){
     }
 }
 
-export function requestMeetingAttendees(){
-    return {
-        type: 'REQUEST_ATTENDEES'
-    }
-}
+// export function requestMeetingAttendees(){
+//     return {
+//         type: 'REQUEST_ATTENDEES'
+//     }
+// }
 
 export function receiveMeetingAttendees(){
     return {
@@ -98,11 +95,11 @@ export function receiveMeetingAttendees(){
     }
 }
 
-export function requestUsers(){
-    return {
-        type: 'REQUEST_USERS'
-    }
-}
+// export function requestUsers(){
+//     return {
+//         type: 'REQUEST_USERS'
+//     }
+// }
 
 export function receiveUsers(){
     return {
