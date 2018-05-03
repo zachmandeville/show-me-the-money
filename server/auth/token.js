@@ -12,7 +12,7 @@ function issue (req, res) {
         else if (!match) res.status(400).json({message: 'Password is incorrect'})
         else {
           var token = createToken(user, process.env.JWT_SECRET)
-          res.json({
+          res.send(200).json({
             message: 'Authentication successful',
             token
           })
