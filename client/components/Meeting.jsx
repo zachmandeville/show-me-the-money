@@ -1,10 +1,34 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Counter from './Counter'
 
 function Meeting (props) {
   return <div className="container">
   <br/>
     <h2 className="title is-2">Start Meeting</h2>
+    <div className="field has-addons">
+      <div className="control is-expanded">
+        <input className="input" type="text" placeholder="Meeting Description"/>
+      </div>
+    </div>
+      <div className="field has-addons">
+      <div className="control" id="start">
+        Start time:
+      </div>
+      <div className="control">
+        <label className="radio">
+          <input type="radio" name="answer" className="weebox"/>
+          Now,
+        </label>
+      </div>
+      <div className="control" id="or">
+        or
+      </div>
+        <div className="control is-expanded">
+          <input className="input" type="date" placeholder="Start time"/>
+        </div>
+        
+      </div>
     <div className="field has-addons">
       <div className="control">
         <a className="button is-primary">
@@ -12,16 +36,17 @@ function Meeting (props) {
         </a>
       </div>
       <div className="control is-expanded">
-        <input className="input" type="text" placeholder="Name"/>
+        <input className="input" type="text" placeholder="Attendee name"/>
       </div>
       <div className="control is-expanded">
-        <input className="input" type="text" placeholder="$"/>
+        <input className="input" type="text" placeholder="Attendee hourly wage"/>
       </div>
     </div>
     <div className="buttons is-centered">
       <button className="button is-dark">Save</button>
       <button className="button is-primary">Start</button>
     </div>
+    <Counter />
   </div>
 }
 
