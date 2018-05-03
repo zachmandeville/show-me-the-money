@@ -26,6 +26,9 @@ function History (props) {
           </tr>
         </tbody>
       </table>
+      <div className="buttons is-centered">
+      <Link to = '/graph'/> <a className="button is-dark">Graphical representation</a>
+      </div>
   </div>
 }
 
