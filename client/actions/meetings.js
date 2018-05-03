@@ -80,7 +80,7 @@ export function saveCompletedMeeting() {
 //     }
 // }
 
-export function saveCompletedMeeting(meeting) {
+export function sendCompletedMeeting(meeting) {
     return {
         type: 'SAVE_COMPLETED',
         meeting
