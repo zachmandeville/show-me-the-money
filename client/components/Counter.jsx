@@ -8,7 +8,7 @@ function Counter (props) {
         Cost counter
     </div>
     <div className="box">
-        Cost counter
+        Timer
     </div>
     </div>
   }
