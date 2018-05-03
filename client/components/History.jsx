@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 function History (props) {
   return <div className="container">
+  <br/>
     <h2 className="title is-2">Meeting history</h2>
       <table className="table is-bordered is-fullwidth">
         <thead className="thead">

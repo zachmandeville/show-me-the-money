@@ -1,0 +1,15 @@
+.field.has-addons {
+  width: 100%;
+}
+
+#name-entry {
+  width: 40%;
+}
+
+#cost-entry {
+  width: 40%;
+}
+
+#plus-button {
+  width: 20%;
+}
