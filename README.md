@@ -119,10 +119,10 @@ res STATUS 200
     "start_time": 800,
     "end_time": 900,
     "attendees": [
-      {id: 1, name: "bob", wage_per_hour: 10, salary: 20000},
-      {id: 2, name: "alice", wage_per_hour: 10, salary: 20000},
-      {id: 3, name: "eve", wage_per_hour: 10, salary: 20000}
-      {id: 4, name: "chris", wage_per_hour: 10, salary: 20000}
+      {id: 1, user_name: "bob", first_name: "Bob", last_name: "Smith", hourly_wage: 10},
+      {id: 2, user_name: "alice", first_name: "Alice", last_name: "Smith", hourly_wage: 10},
+      {id: 3, user_name: "eve", first_name: "Eve", last_name: "Miller", hourly_wage: 10},
+      {id: 4, user_name: "chris", first_name: "Chris", last_name: "Knight", hourly_wage: 10}
       ]
   }
 ]    
@@ -142,10 +142,10 @@ res STATUS 200
     "start_time": 800,
     "end_time": 900,
     "attendees": [
-      {name: "bob", wage_per_hour: 10, salary: 20000},
-      {name: "alice", wage_per_hour: 10, salary: 20000},
-      {name: "eve", wage_per_hour: 10, salary: 20000}
-      ]
+      {user_name: "bob", first_name: "Bob", last_name: "Smith", hourly_wage: 10},
+      {user_name: "alice", first_name: "Alice", last_name: "Smith", hourly_wage: 10},
+      {user_name: "eve", first_name: "Eve", last_name: "Miller", hourly_wage: 10}
+    ]
   }
 res STATUS 500
   {
@@ -157,9 +157,9 @@ GET `/api/meetings/2/users`
 ```
 res STATUS 200
 [
-  {id: 1, name: "bob", wage_per_hour: 10, salary: 20000},
-  {id: 2, name: "alice", wage_per_hour: 10, salary: 20000},
-  {id: 3, name: "eve", wage_per_hour: 10, salary: 20000}
+      {id: 1, user_name: "bob", first_name: "Bob", last_name: "Smith", hourly_wage: 10},
+      {id: 2, user_name: "alice", first_name: "Alice", last_name: "Smith", hourly_wage: 10},
+      {id: 3, user_name: "eve", first_name: "Eve", last_name: "Miller", hourly_wage: 10}
 ]
 res STATUS 400
 {
@@ -177,10 +177,10 @@ GET `/api/users`
 ```
 res STATUS 200
 [
-  {id: 1, name: "bob", wage_per_hour: 10, salary: 20000},
-  {id: 2, name: "alice", wage_per_hour: 10, salary: 20000},
-  {id: 3, name: "eve", wage_per_hour: 10, salary: 20000}
-  {id: 4, name: "chris", wage_per_hour: 10, salary: 20000}
+      {id: 1, user_name: "bob", first_name: "Bob", last_name: "Smith", hourly_wage: 10},
+      {id: 2, user_name: "alice", first_name: "Alice", last_name: "Smith", hourly_wage: 10},
+      {id: 3, user_name: "eve", first_name: "Eve", last_name: "Miller", hourly_wage: 10},
+      {id: 4, user_name: "chris", first_name: "Chris", last_name: "Knight", hourly_wage: 10}
 ]
 
 res STATUS 500

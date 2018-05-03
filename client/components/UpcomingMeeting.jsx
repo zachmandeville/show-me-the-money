@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import MeetingDetails from './MeetingDetails'
 
 function UpcomingMeeting (props) {
   return <div className="container">
@@ -26,6 +27,7 @@ function UpcomingMeeting (props) {
       </table>
       <button className="button is-dark is-large">Add new meeting</button>
       <button className="button is-primary is-large">View past meetings</button>
+      <MeetingDetails /> 
     </div>
   </div>
 }
