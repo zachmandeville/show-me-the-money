@@ -1,15 +1,3 @@
-.field.has-addons {
-  width: 100%;
-}
-
-#name-entry {
-  width: 40%;
-}
-
-#cost-entry {
-  width: 40%;
-}
-
-#plus-button {
-  width: 20%;
-}
+/* Notes for Anthony:
+I removed the id as Bulma has a class to expanded input fields (is-expanded)
+which expands the input fields across the space being used. */
