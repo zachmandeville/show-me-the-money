@@ -2,6 +2,7 @@ import request from './utils/api'
 
 
 
+
 export function getMeetingHistory() {
     return (dispatch) => {
         dispatch(requestMeetingHistory())
@@ -108,5 +109,12 @@ export function receiveUsers(){
         type: 'RECEIVE_USERS',
         users
 
+    }
+}
+
+export function showError() {
+    return {
+        type: 'SHOW_ERROR',
+        errorMessage
     }
 }
