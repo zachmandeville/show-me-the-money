@@ -8,9 +8,9 @@ function History (props) {
       <table className="table is-bordered is-fullwidth">
         <thead className="thead">
           <tr className="tr">
-            <th className="th"><abbr title="Date">Date</abbr></th>
+            <th className="th">Date</th>
             <th className="th">Cost</th>
-            <th className="th"><abbr title="Length">Length</abbr></th>
+            <th className="th">Length</th>
           </tr>
         </thead>
         <tbody>
