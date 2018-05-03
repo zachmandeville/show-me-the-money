@@ -10,6 +10,7 @@ import History from './History'
 import UpcomingMeeting from './UpcomingMeeting'
 import MeetingDetails from './MeetingDetails'
 import EditMeeting from './EditMeeting';
+import Graph from './Graph'
 
 const App = ({auth}) => (
   <Router>
@@ -35,6 +36,7 @@ const App = ({auth}) => (
         <Route path="/upcomingmeeting" component={UpcomingMeeting} />
         <Route path="/meetingdetails" component={MeetingDetails} />
         <Route path="/editmeeting" component={EditMeeting} />
+        <Route path="/graph" component={Graph} />
       </div>
 
     </div>
