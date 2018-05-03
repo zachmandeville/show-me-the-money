@@ -32,6 +32,7 @@ class Nav extends React.Component {
               ? [
                 <Link onClick={this.toggleBurger} className="navbar-item" to="/meeting">Start Meeting</Link>,
                 <Link onClick={this.toggleBurger} className="navbar-item" to="/history">Meeting History</Link>,
+                <Link onClick={this.toggleBurger} className="navbar-item" to="/upcomingmeeting">Upcoming Meetings</Link>,
                 <a className="navbar-item" onClick={() => logout()}>Logout</a>
               ]
               : [
