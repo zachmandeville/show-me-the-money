@@ -28,10 +28,7 @@ function UpcomingMeeting (props) {
             <td className="td"><a class="button">Change details</a> or <a class="button">begin meeting</a></td>
           </tr>
         </tbody>
-      </table>
-      <button className="button is-dark is-large">Add new meeting</button>
-      <button className="button is-primary is-large">View past meetings</button>
-      <MeetingDetails /> 
+      </table>      
         <Link className="button is-centered is-dark is-large" to = '/meeting'>Add New Meeting</Link>
         <Link className="button is-centered is-primary is-large" to = '/history'>View past meetings</Link>
     </div>

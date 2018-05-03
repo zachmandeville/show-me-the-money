@@ -6,23 +6,16 @@ function Meeting (props) {
   return <div className="container">
   <br/>
     <h2 className="title is-2">Start Meeting</h2>
+    <div className="toggleMinimisedOrNot">
     <div className="field has-addons">
       <div className="control is-expanded">
         <input className="input" type="text" placeholder="Meeting Description"/>
+        {/* Meeting Description above is for 'name' in meeting db */}
       </div>
     </div>
       <div className="field has-addons">
-      <div className="control" id="start">
+      <div className="label" id="start">
         Start time:
-      </div>
-      <div className="control">
-        <label className="radio">
-          <input type="radio" name="answer" className="weebox"/>
-          Now,
-        </label>
-      </div>
-      <div className="control" id="or">
-        or
       </div>
         <div className="control is-expanded">
           <input className="input" type="date" placeholder="Start time"/>
@@ -43,9 +36,12 @@ function Meeting (props) {
       </div>
     </div>
     <div className="buttons is-centered">
+    {/* these buttons will need to be toggled on this component */}
       <button className="button is-dark">Save</button>
       <button className="button is-primary">Start</button>
+      </div>
     </div>
+    <button className="button is-centered">Hide/Show</button>
     <Counter />
   </div>
 }
