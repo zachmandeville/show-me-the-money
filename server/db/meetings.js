@@ -9,14 +9,20 @@ function getMeetings (db) {
   }
 
 //POST /api/meetings/
-function newMeeting (name, date, start_time, end_time, attendees, db) {
-  return db('meetings')    
-    .insert({name, date, start_time, end_time, attendees})
+function addNewMeeting (newMeeting, db) {
+  return db('meetings')   
+    .insert(...newMeeting)
 }
    
 //GET /api/meetings/2/users
-function getUsersByMeeting (meeting_id)
+function getUsersByMeeting (meeting_id, db) {
   return db('meetings')
     .select('attendees')
     .where('id', meeting_id) 
+}
 
+module.exports = {
+    getMeetings,
+    addNewMeeting,
+    getUsersByMeeting
+  }
