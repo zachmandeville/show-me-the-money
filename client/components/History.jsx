@@ -12,7 +12,10 @@ function History (props) {
             <th className="th">Cost</th>
             <th className="th">Length</th>
             <th className="th">Actions</th>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c3a622cd494b0f54d19b1885ecd2dc52193e8bd2
           </tr>
         </thead>
         <tbody>
