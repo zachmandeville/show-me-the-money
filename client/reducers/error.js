@@ -4,10 +4,10 @@ function error (state = '', action){
     switch (action.type) {
         case SHOW_ERROR:
             return action.errorMessage
-        default: 
+        default:
             return state
 
         }
     }
-    
+
     export default error
