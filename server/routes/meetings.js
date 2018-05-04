@@ -12,6 +12,7 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/',(req,res)=>{
+  console.log({imworking:req.body})
   let newMeeting = {
     'name':req.body.name,
     'scheduled_date':req.body.date,

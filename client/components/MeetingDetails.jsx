@@ -48,7 +48,7 @@ class Counter extends React.Component {
           </tr>
           <tr>
             <th className="th">Cost</th>
-            <td className="td">{individualMeeting.cost}</td>
+            <td className="td">${individualMeeting.cost/100}</td>
           </tr>
           <tr>
             <th className="th">Cost per minute</th>
@@ -56,12 +56,7 @@ class Counter extends React.Component {
           </tr>
           <tr>
             <th className="th">Attendees</th>
-            <td className="td">{
-              //   individualMeetingAttendees = individualMeetingAttendees || ""
-              // individualMeetingAttendees.map(attendee => {
-              //   return attendee.user_name
-              // })
-            }</td>
+            <td className="td">Beyonce, Kelly, Michelle</td>
           </tr>
         </tbody>
       </table>
