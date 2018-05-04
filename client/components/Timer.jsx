@@ -4,14 +4,19 @@ import {connect} from 'react-redux'
 import { startTimer, endTimer, duration } from '../actions/timer'
 
 var Timer = (props) => {
-  console.log({props})
+  var tickTock =  setInterval(() => props.dispatch(props.timer.startTime && duration(props.timer.startTime)),1000)
   return (
     <div>
       <button onClick={()=>props.dispatch(startTimer())}>Start!</button>
-      <button onClick={()=>props.dispatch(duration(props.timer.startTime))}>Duration!</button>
-      <button onClick={()=>props.dispatch(endTimer())}>End!</button>
+      <p>{props.timer.duration}</p>
+      <button onClick={stop}>End!</button>
     </div>
   )
+  function stop () {
+    console.log('dog')
+
+    props.dispatch(endTimer())
+  }
 }
 
 
