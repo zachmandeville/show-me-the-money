@@ -24,8 +24,16 @@ function getUsersByMeeting (meeting_id, db) {
     .first()
 }
 
+function updateNewMeeting (editedMeeting, meeting_id, db) {
+  console.log(editedMeeting)
+  return db('meetings') 
+    .where('id', meeting_id)  
+    .update(editedMeeting)
+}
+
 module.exports = {
     getMeetings,
     addNewMeeting,
-    getUsersByMeeting
+    getUsersByMeeting,
+    updateNewMeeting
   }
