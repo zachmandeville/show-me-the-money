@@ -1,14 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import { startTimer, endTimer, duration } from '../actions/timer'
 
-var Timer = () => {
+var Timer = (props) => {
+  console.log({props})
   return (
     <div>
-      <h1>Hi, this is Timer</h1>
+      <button onClick={()=>props.dispatch(startTimer())}>Start!</button>
+      <button onClick={()=>props.dispatch(duration(props.timer.startTime))}>Duration!</button>
+      <button onClick={()=>props.dispatch(endTimer())}>End!</button>
     </div>
   )
 }
 
-export default Timer
 
+
+function mapStateToProps(state) {
+  return {
+    timer: state.timer
+  }
+}
+
+export default connect(mapStateToProps)(Timer)
