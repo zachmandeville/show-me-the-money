@@ -15,28 +15,35 @@ class Counter extends React.Component {
         this.calcMoney = this.calcMoney.bind(this)
     }
 
-calcMoney() {
-  var totalSalary = 0
-  var costPerSecond = 0
-    for (let i = 0; i < attendees.length; i++) {
-    totalSalary += attendees[i].hourly_wage
-  }
-  return costPerSecond = ((totalSalary / 3600) * this.state.time) 
+    componentWillReceiveProps(nextTime) {
+        var money = this.calcMoney(nextTime)
+        this.setState ({
+            time: money
+        })
+ }
 
-}
+    calcMoney(nextTime) {
+    var totalSalary = 0
+    var costPerSecond = 0
+        for (let i = 0; i < attendees.length; i++) {
+        totalSalary += attendees[i].hourly_wage
+    }
+    return costPerSecond = ((totalSalary / 3600) * nextTime) 
 
-render() {
-    return <div className="container">
-    <div className="box">
-        Cost counter:
-       <p> {this.calcMoney()} </p>
-    </div>
-    <div className="box">
-        Timer
-    </div>
-    </div>
-  }
-}
+    }
+
+    render() {
+        return <div className="container">
+        <div className="box">
+            Cost counter:
+        <p> {this.state.time} </p>
+        </div>
+        <div className="box">
+            Timer
+        </div>
+        </div>
+    }
+    }
   
   function mapStateToProps(state){
     return {
