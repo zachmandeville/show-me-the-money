@@ -1,30 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Counter from './Counter'
-import {getMeetingAttendees} from '../actions/meetings'
-import {newTimeAction} from '../actions/time'
 
-//get attendees from store
-//get total salary (hourly)
-//divide by 60 /60 /60 = secmaths
-var costPerSecond = 0
-function calcMoney() {
-  var totalSalary = 0
-    for (let i = 0; i < attendees.length; i++) {
-    totalSalary += attendees[i].hourly_wage
-  }
-  return costPerSecond = (totalSalary / 3600) 
-}
-
-function costCounter() {
-  var counter = 0
-  counter = (newTimeAction * costPerSecond)
-
-}
-//get new time every second
-//times that by secmaths
-//action to push to store
-//return to Counter [costcounter]
 
 
 
@@ -72,10 +49,5 @@ function Meeting (props) {
   </div>
 }
 
-function mapStateToProps(state){
-  return {
-      attendees: state.attendees,
-      time: state.time
-  }
-}
-export default connect(mapStateToProps)(Meeting)
+
+export default connect()(Meeting)

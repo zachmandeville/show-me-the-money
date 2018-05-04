@@ -2,7 +2,7 @@ import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getMeetingAttendees} from '../actions/meetings'
-import {newTimeAction} from '../actions/time' // change to whatever Laura and Zach call this
+// import {duration} from '../actions/timer' 
 
 
 
@@ -10,13 +10,13 @@ class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: this.props.time
+            time: 0
         }
         this.calcMoney = this.calcMoney.bind(this)
     }
 
-    componentWillReceiveProps(nextTime) {
-        var money = this.calcMoney(nextTime)
+    componentWillReceiveProps(nextProps) {
+        var money = this.calcMoney(nextProps.timer.duration)
         this.setState ({
             time: money
         })
@@ -36,7 +36,7 @@ class Counter extends React.Component {
         return <div className="container">
         <div className="box">
             Cost counter:
-        <p> {this.state.time} </p>
+        <p> ${this.state.time} </p>
         </div>
         <div className="box">
             Timer
@@ -48,7 +48,7 @@ class Counter extends React.Component {
   function mapStateToProps(state){
     return {
         attendees: state.attendees,
-        time: state.time
+        timer: state.timer
     }
   }
   export default connect(mapStateToProps)(Counter)
