@@ -7,11 +7,15 @@ function timer (state = {}, action){
       }
       case 'END_TIMER':
       return {
+        startTime: state.startTime,
+        duration: state.duration,
         endTime: action.endTime
       }
       case 'DURATION':
       return {
-        duration: ''
+        startTime: state.startTime,
+        duration: action.duration
+
       }
     default:
       return state
