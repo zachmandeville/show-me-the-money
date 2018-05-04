@@ -82,6 +82,7 @@ class Meeting extends React.Component {
  </div>
 }
 }
+
 export default connect()(Meeting)
 
 
