@@ -39,4 +39,20 @@ router.get('/:id/users',(req,res)=>{
   .catch(err => res.send({message: "unsucessful request"}))
 })
 
+router.put('/:id',(req,res)=>{
+  let editedMeeting = {
+    'name':req.body.name,
+    'scheduled_date':req.body.date,
+    'start_time':req.body.start_time,
+    'end_time':req.body.end_time,
+    'attendees':JSON.stringify(req.body.attendees)
+  }
+  console.log('putroute',editedMeeting)
+  db.updateNewMeeting(editedMeeting, req.params.id, req.app.get('db'))
+  .then(meeting =>{
+    return res.json(meeting)
+  })
+  .catch(err => res.status(500).send({message: "Server Error"}))
+})
+
 module.exports=router
