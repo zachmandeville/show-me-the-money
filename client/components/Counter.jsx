@@ -3,9 +3,6 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getMeetingAttendees} from '../actions/meetings'
 
-
-
-
 class Counter extends React.Component {
     constructor(props) {
         super(props);
@@ -33,13 +30,12 @@ class Counter extends React.Component {
     var totalSalary = 400
     var costPerSecond = 0
     costPerSecond = ((totalSalary / 3600) * this.state.counter) 
-    console.log({costPerSecond})
     this.setState ({
         time: costPerSecond
     })
     }
 
-    render() { console.log("state ", this.state)
+    render() { 
         return <div className="container">
         <div className="box">
             Cost counter:
