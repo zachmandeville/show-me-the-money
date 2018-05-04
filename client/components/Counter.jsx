@@ -1,9 +1,8 @@
 import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import Timer from './Timer'
 import {getMeetingAttendees} from '../actions/meetings'
-// import {duration} from '../actions/timer' 
-
 
 
 class Counter extends React.Component {
@@ -39,7 +38,7 @@ class Counter extends React.Component {
         <p> ${this.state.time} </p>
         </div>
         <div className="box">
-            Timer
+                    <Timer />
         </div>
         </div>
     }

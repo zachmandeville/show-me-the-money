@@ -1,4 +1,6 @@
-import request from '../utils/api'
+// import request from '../utils/api'
+import request from 'superagent'
+
 
 export function getMeetingHistory() {
     return (dispatch) => {
@@ -15,12 +17,14 @@ export function getMeetingHistory() {
 
 }
 
-export function saveMeeting () {
+export function saveMeeting (state) {
+    console.log(state)
     return (dispatch) => 
         request 
             .post('/api/meetings')
+            .send(state)
             .then (res => {
-                dispatch(savedMeeting(res.body))
+                dispatch(savedMeeting(state))
             })
             .catch(err => {
                 dispatch(showError(err.message))
