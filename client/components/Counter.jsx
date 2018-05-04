@@ -2,7 +2,7 @@ import React from 'react'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getMeetingAttendees} from '../actions/meetings'
-// import {duration} from '../actions/timer' 
+
 
 
 
@@ -10,29 +10,36 @@ class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            time: 0
+            time: 0,
+            counter: 10000 
         }
         this.calcMoney = this.calcMoney.bind(this)
+        this.addTime = this.addTime.bind(this)
+    }
+    componentWillMount() {
+        setInterval(() => this.addTime(), 1000)
     }
 
-    componentWillReceiveProps(nextProps) {
-        var money = this.calcMoney(nextProps.timer.duration)
-        this.setState ({
-            time: money
-        })
- }
+    addTime() {
+      var nextTime = this.state.counter + 1000
+      this.setState ({
+          counter: nextTime
+      })
+      this.calcMoney()
+    }
 
-    calcMoney(nextTime) {
-    var totalSalary = 0
+
+    calcMoney() {
+    var totalSalary = 400
     var costPerSecond = 0
-        for (let i = 0; i < attendees.length; i++) {
-        totalSalary += attendees[i].hourly_wage
+    costPerSecond = ((totalSalary / 3600) * this.state.counter) 
+    console.log({costPerSecond})
+    this.setState ({
+        time: costPerSecond
+    })
     }
-    return costPerSecond = ((totalSalary / 3600) * nextTime) 
 
-    }
-
-    render() {
+    render() { console.log("state ", this.state)
         return <div className="container">
         <div className="box">
             Cost counter:
@@ -43,7 +50,7 @@ class Counter extends React.Component {
         </div>
         </div>
     }
-    }
+}
   
   function mapStateToProps(state){
     return {
