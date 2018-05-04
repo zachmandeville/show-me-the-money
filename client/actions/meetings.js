@@ -1,4 +1,6 @@
-import request from '../utils/api'
+// import request from '../utils/api'
+import request from 'superagent'
+
 
 export function getMeetingHistory() {
     return (dispatch) => {

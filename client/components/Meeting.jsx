@@ -7,12 +7,12 @@ function Meeting (props) {
   <br/>
     <h2 className="title is-2">Start Meeting</h2>
     <div className="toggleMinimisedOrNot">
-    <div className="field has-addons">
-      <div className="control is-expanded">
-        <input className="input" type="text" placeholder="Meeting Description"/>
-        {/* Meeting Description above is for 'name' in meeting db */}
+      <div className="field has-addons">
+        <div className="control is-expanded">
+          <input className="input" type="text" placeholder="Meeting Description"/>
+          {/* Meeting Description above is for 'name' in meeting db */}
+        </div>
       </div>
-    </div>
       <div className="field has-addons">
       <div className="label" id="start">
         Start time:
